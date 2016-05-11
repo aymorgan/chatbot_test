@@ -1,7 +1,7 @@
 var express = require('express')
-var bodyParser = require('bodyParser')
+var bodyParser = require('body-parser')
 var request = require('request')
-var app = require('app')
+var app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -13,17 +13,18 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-  res.send('Hello world, I am a chat bot')
+    res.send('Hello world, I am a chat bot')
 })
 
-// for Facebook Verification
+// for Facebook verification
 app.get('/webhook/', function (req, res) {
-  if (req.query['hub.verify_tocken'] === 'my_voice_is_the_password_verify_me') {
+    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+        res.send(req.query['hub.challenge'])
+    }
     res.send('Error, wrong token')
-  }
 })
 
-// Spin up a server
+// Spin up the server
 app.listen(app.get('port'), function() {
-  console.log('running on port', app.get('port'))
+    console.log('running on port', app.get('port'))
 })
