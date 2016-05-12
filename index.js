@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res) {
 
 var token = "<FB_PAGE_ACCESS_TOKEN>"
 
-ffunction sendTextMessage(sender, text) {
+function sendTextMessage(sender, text) {
     messageData = {
         text:text
     }
