@@ -45,7 +45,7 @@ app.post('/webhook/', function (req, res) {
 })
 
 
-var token = "FB_PAGE_ACCESS_TOKEN"
+var token = "EAAOhYn5LhZCgBAAmnRn7R85qLpPdjMZBDEU8wQOnkkZBW546dZA9OOAOTjzdvv4DNNwZCtyrEgpA6rwW5O1ZC7GgvYjblanbPPWxu3Dm8N7TupZA6WWUbhbO5iDKZAw6KWaEGahX4UGME5uWh6Dg7UQzhehZBZC25lkwdihvz0UM5DlAZDZD"
 
 
 function sendTextMessage(sender, text) {
